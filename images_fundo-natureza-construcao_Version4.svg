@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#8fd8ff"/>
+      <stop offset="45%" stop-color="#58baf0"/>
+      <stop offset="100%" stop-color="#2a9adf"/>
+    </linearGradient>
+
+    <linearGradient id="lakeGrad" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#00b4e6"/>
+      <stop offset="100%" stop-color="#0077c8"/>
+    </linearGradient>
+
+    <linearGradient id="hillGrad" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#e9e3da"/>
+      <stop offset="100%" stop-color="#f6f3ee"/>
+    </linearGradient>
+
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="20" stdDeviation="30" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+
+    <g id="tree">
+      <rect x="-10" y="0" width="20" height="60" rx="3" fill="#6b4a2a"/>
+      <circle cx="0" cy="-6" r="34" fill="#0b7cc1"/>
+      <circle cx="-22" cy="2" r="26" fill="#00a6d4"/>
+      <circle cx="18" cy="6" r="22" fill="#0b7cc1"/>
+    </g>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="100%" height="100%" fill="url(#skyGrad)"/>
+
+  <!-- Sun -->
+  <circle cx="1600" cy="140" r="60" fill="#fff9d6" opacity="0.9"/>
+
+  <!-- Distant Hills -->
+  <path d="M0,620 C250,520 520,560 820,620 C1120,680 1520,600 1920,640 L1920,1080 L0,1080 Z"
+        fill="#d4eaf8" opacity="0.6"/>
+
+  <!-- Mid hill / sand shore -->
+  <path d="M0,700 C320,620 580,650 900,700 C1220,750 1500,720 1920,760 L1920,1080 L0,1080 Z"
+        fill="url(#hillGrad)" opacity="0.95"/>
+
+  <!-- Lake -->
+  <g transform="translate(0,760)">
+    <path d="M0,60 C220,-20 480,10 840,20 C1200,30 1460,-10 1920,60 L1920,420 L0,420 Z"
+          fill="url(#lakeGrad)"/>
+    <!-- gentle waves -->
+    <path d="M0,120 C220,80 480,140 840,130 C1200,120 1460,90 1920,120" stroke="#aeeeff" stroke-width="6" fill="none" opacity="0.7"/>
+    <path d="M0,160 C240,120 520,180 880,170 C1240,160 1500,140 1920,160" stroke="#d9f7ff" stroke-width="4" fill="none" opacity="0.5"/>
+  </g>
+
+  <!-- Trees (repeated) -->
+  <use href="#tree" x="140" y="580"/>
+  <use href="#tree" x="220" y="610" transform="scale(0.9)"/>
+  <use href="#tree" x="330" y="590" transform="scale(0.85)"/>
+  <use href="#tree" x="420" y="620" transform="scale(0.75)"/>
+  <use href="#tree" x="1680" y="600" transform="scale(0.95)"/>
+  <use href="#tree" x="1550" y="620" transform="scale(1.0)"/>
+  <use href="#tree" x="1460" y="600" transform="scale(0.85)"/>
+
+  <!-- House under construction -->
+  <g transform="translate(980,610)" filter="url(#softShadow)">
+    <!-- foundation / base -->
+    <rect x="-160" y="-40" width="320" height="140" rx="10" fill="#f7f7f7"/>
+    <!-- frame -->
+    <rect x="-120" y="-30" width="240" height="100" fill="#ffffff" stroke="#c9dff0" stroke-width="3"/>
+    <!-- roof frame (incomplete) -->
+    <polyline points="-140,-30 0,-120 140,-30" fill="none" stroke="#0b3d91" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+    <line x1="-90" y1="-26" x2="-90" y2="70" stroke="#0b3d91" stroke-width="6"/>
+    <line x1="-30" y1="-26" x2="-30" y2="70" stroke="#0b3d91" stroke-width="6"/>
+    <line x1="30" y1="-26" x2="30" y2="70" stroke="#0b3d91" stroke-width="6"/>
+    <line x1="90" y1="-26" x2="90" y2="70" stroke="#0b3d91" stroke-width="6"/>
+    <!-- scaffolding -->
+    <g stroke="#8aaed6" stroke-width="4" fill="none">
+      <line x1="-160" y1="72" x2="160" y2="72"/>
+      <line x1="-160" y1="40" x2="160" y2="40"/>
+      <line x1="-160" y1="10" x2="160" y2="10"/>
+      <line x1="-160" y1="-20" x2="160" y2="-20" opacity="0.6"/>
+    </g>
+    <!-- window -->
+    <rect x="-30" y="0" width="60" height="48" fill="#e8f6ff" stroke="#bfe8ff" stroke-width="2" rx="4"/>
+    <line x1="0" y1="0" x2="0" y2="48" stroke="#bfe8ff" stroke-width="2"/>
+    <line x1="-30" y1="24" x2="30" y2="24" stroke="#bfe8ff" stroke-width="2"/>
+    <!-- small construction sign -->
+    <rect x="110" y="48" width="46" height="36" rx="6" fill="#ffd89b" stroke="#e6b878"/>
+    <text x="133" y="72" font-family="Arial" font-size="12" fill="#4b3a2a" text-anchor="middle" alignment-baseline="middle">OBRA</text>
+  </g>
+
+  <!-- Foreground grasses -->
+  <g fill="#dfeef6" opacity="0.7">
+    <ellipse cx="120" cy="860" rx="280" ry="60" fill="#f6f3ee" opacity="1"/>
+    <ellipse cx="1760" cy="860" rx="280" ry="60" fill="#f6f3ee" opacity="1"/>
+  </g>
+
+  <!-- subtle vignette -->
+  <rect x="0" y="0" width="100%" height="100%" fill="black" opacity="0.03"/>
+</svg>
